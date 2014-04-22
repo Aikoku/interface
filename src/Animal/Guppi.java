@@ -10,7 +10,7 @@ package Animal;
  *
  * @author Mark
  */
-public class Guppi extends Animals{
+public class Guppi extends Fish{
 
     public Guppi(String name, int price) {
         super(name, price);

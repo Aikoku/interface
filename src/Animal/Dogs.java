@@ -21,16 +21,16 @@ public class Dogs extends Animals implements Voice, Xishn {
 
     @Override
     public String toString() {
-        return "Dogs{" + super.toString() + '}';
+        return "Dogs{" + super.toString() + "} "+xishn()+" "+voice();
     }
 
 
     public String xishn() {
-        return " Питается едой с стола ";
+        return "Хичный Ведет охоту на котов ";
     }
     
     public String voice(){
-        return " ";
+        return "Голос Гавкает ";
     }
 
 }

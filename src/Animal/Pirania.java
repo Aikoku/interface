@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Animal;
 
 /**
  *
  * @author Mark
  */
-public class Pirania extends Fish implements Xishn{
+public class Pirania extends Fish implements Xishn {
 
     public Pirania(String name, int price) {
         super(name, price);
@@ -19,14 +18,12 @@ public class Pirania extends Fish implements Xishn{
     public Pirania() {
     }
 
-    @Override
-    public String toString() {
-        return "Pirania{" +super.toString()+ '}';
-    }
-    
-
-    public String xishn(){
+    public String xishn() {
         return " Кормить свежим мясом ";
     }
-    
+
+    @Override
+    public String toString() {
+        return "Pirania{" + super.toString() + "} Хичный "+xishn();
+    }
 }

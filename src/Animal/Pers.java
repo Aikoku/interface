@@ -20,16 +20,16 @@ public class Pers extends Cats implements Poroda{
     }
     
     public String poroda(){
-        return " Персицкая ";
+        return "Poroda: Персицкая ";
     }
     
     public String voice(){
-        return " Мурлычет по персицки ";
+        return "Voice: Мурлычет по персицки ";
     }
 
     @Override
     public String toString() {
-        return "Pers{" +super.toString()+ '}';
+        return "Pers{" +super.toString()+" poroda:"+poroda()+"}";
     }
     
 }

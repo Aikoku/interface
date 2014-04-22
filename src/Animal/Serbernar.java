@@ -19,16 +19,16 @@ public class Serbernar extends Dogs implements Poroda {
     }
 
     public String poroda() {
-        return "Poroda: Сербернар ";
+        return " Poroda: Сербернар ";
     }
 
     public String voice() {
-        return "Voice: Поет пошлые немецкие песенки ";
+        return " Voice: Поет пошлые немецкие песенки ";
     }
 
     @Override
     public String toString() {
-        return "Serbernar{" + super.toString() + '}';
+        return "Serbernar{" + super.toString() + "} "+poroda()+" "+voice();
     }
 
 }

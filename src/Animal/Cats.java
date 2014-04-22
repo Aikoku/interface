@@ -24,13 +24,13 @@ public class Cats extends Animals implements Voice,Xishn{
         return "Cats{" +super.toString()+ "}"+voice()+" "+xishn();
     }
     
-    @Override
+    
     public String voice(){
-        return " ";
+        return " Миукают ";
     }
     @Override
     public String xishn(){
-        return " ";
+        return "Хичный: Ловят мышей, в кормежке не нуждаются ";
     }
     
 }

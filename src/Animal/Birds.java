@@ -20,11 +20,11 @@ public class Birds extends Animals implements Voice {
 
     @Override
     public String toString() {
-        return "Birds{" + super.toString() + '}';
+        return "Birds{" + super.toString() + "} "+voice();
     }
 
     public String voice() {
-        return " ";
+        return "Voice: Свистят, пикают, крякают, все могут.. ";
     }
 
 }

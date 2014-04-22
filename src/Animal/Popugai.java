@@ -20,15 +20,15 @@ public class Popugai extends Birds implements Poroda {
 
     @Override
     public String toString() {
-        return "Popugai{" + super.toString() + '}';
+        return "Popugai{" + super.toString() + "} "+poroda();
     }
 
     public String poroda() {
-        return " Волнистый попугай (импортный) ";
+        return "Порода: Волнистый попугай (импортный) ";
     }
 
     public String voice() {
-        return " Знает в совершенстве Угорские языки ";
+        return "Voice: Знает в совершенстве Угорские языки ";
     }
 
 }

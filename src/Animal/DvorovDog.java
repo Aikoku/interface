@@ -19,9 +19,15 @@ public class DvorovDog extends Dogs{
     public DvorovDog() {
     }
 
+    @Override
     public String voice(){
-        return " Поет о жизни на раене ";
+        return "Voice: Поет о жизни на районе ";
     }
+
+//    @Override
+//    public String toString() {
+//        return "DvorovDog{" +super.toString()+"} "+voice() ;
+//    }
     
     
 }
