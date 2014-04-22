@@ -9,7 +9,7 @@ package Toys;
  *
  * @author Mark
  */
-public class DemoToys {
+public class Interface {
 
     /**
      * @param args the command line arguments
