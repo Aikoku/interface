@@ -4,30 +4,29 @@
  * and open the template in the editor.
  */
 
-package pkginterface;
+package Toys;
 
 /**
  *
  * @author Mark
  */
-public class Doll extends Role implements ForGirl{
+public class Car extends Role implements ForBoy{
 
     static {
-        classification="Doll";
+        classification = "Car";
     }
-    
-    public Doll(String name, int price) {
+
+    public Car(String name, int price) {
         super(name, price);
     }
-    
-   public String girl(){
-        return "for little girls";
+
+    public String boy() {
+        return "For little boys";
     }
 
     @Override
     public String toString() {
-        return this.girl()+"Doll{" +super.toString()+'}';
-    } 
-    
-    
+        return this.boy() + "Car{" + super.toString() +'}';
+    }
+
 }

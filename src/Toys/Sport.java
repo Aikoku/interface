@@ -3,23 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pkginterface;
+
+package Toys;
 
 /**
  *
  * @author Mark
  */
-public class Role extends Toy {
-
-    protected static String classification = "Role";
-
-    public Role(String name, int price) {
+public class Sport  extends Toy{
+    protected static String classification = "Sport";
+    
+    public Sport(String name, int price) {
         super(name, price);
     }
 
     @Override
     public String toString() {
-        return "Role{" + super.toString() + '}';
+        return "Sport{" +super.toString()+ '}';
     }
-
+    
+    
+    
 }

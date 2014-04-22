@@ -4,12 +4,19 @@
  * and open the template in the editor.
  */
 
-package pkginterface;
+package Animal;
 
 /**
  *
  * @author Mark
  */
-interface ForGirl {
-    String girl();
+public class DemoAnimals {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
+    
 }
