@@ -11,9 +11,12 @@ package People;
  * @author Mark
  */
 interface Dohodnost {
+    final int MINIMALNIJ_DOHOD =200;
+    final int VISOKIJ_PEREVES = 500;
+    final int MINIMALNIJ_PEREVES = 400;
     
 }
 
 interface ZarobotnajaPlata {
-    
+    final int TEKUSHAJA_STAVKA_NALOGA = 21;
 }

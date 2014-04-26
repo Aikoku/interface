@@ -11,10 +11,27 @@ package People;
  * @author Mark
  */
 class Chelovek {
+    protected String name;
+
+    public Chelovek(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Chelovek{" + "name=" + name + '}';
+    }
+    
     
 }
 
 class Rabotnik extends Chelovek implements Dohodnost,ZarobotnajaPlata{
+    protected int summarnijDohod;
+
+    public Rabotnik(String name, int summarnijDohod) {
+        super(name);
+        this.summarnijDohod = summarnijDohod;
+    }
     
 }
 
