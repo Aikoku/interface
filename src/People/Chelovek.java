@@ -89,8 +89,6 @@ class UspeshnijStudent extends Student implements Dohodnost {
     } 
 }
 
-
-
 class RabotajushijStudent extends UspeshnijStudent implements ZarobotnajaPlata {
     
     protected int zarobotanajaPlata;

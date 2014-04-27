@@ -10,30 +10,6 @@ package People_Palk;
  *
  * @author Mark
  */
-//public class Employer extends People implements Dohod,ZarPlata{
-//    protected int inCome;
-//
-//    public Employer(int inCome, String name) {
-//        super(name);
-//        this.inCome = inCome;
-//    }
-//    
-//    public int raschet_zarplat(){
-//        int zarplat=0;
-//        return zarplat;
-//    }
-//    
-//    public String uroven_dohodnosi(){
-////        if()
-//    }
-//    
-//    @Override
-//    public String toString() {
-//        return "Employer{" + "come=" + super.toString() +" === "+uroven_dohodnosi()+ '}';
-//    }
-//    
-//}
-
 public class Rabotnik extends Chelovek implements Dohodnost, ZarobotnajaPlata {
 
     protected int summarnijDohod;
@@ -43,11 +19,13 @@ public class Rabotnik extends Chelovek implements Dohodnost, ZarobotnajaPlata {
         this.summarnijDohod = summarnijDohod;
     }
 
+    @Override
     public int raschitatZarobotanujuPlatu() {        
         summarnijDohod -= (summarnijDohod * TEKUSHAJA_STAVKA_NALOGA) / 100;
         return summarnijDohod;
     }
 
+    @Override
     public String urovenDohodnosti() {
         int dohod = raschitatZarobotanujuPlatu() - MINIMALNIJ_DOHOD;
         if (dohod < MINIMALNIJ_PEREVES) {

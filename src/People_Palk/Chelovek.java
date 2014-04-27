@@ -29,7 +29,11 @@ public class Chelovek {
     protected String name;
 
     public Chelovek(String name) {
+        try{
         this.name = name;
+        }catch(IllegalArgumentException e){
+            System.out.println("Неверный аргумент "+e);
+        }
     }
 
     @Override

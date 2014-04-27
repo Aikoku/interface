@@ -24,7 +24,7 @@ public class Demo {
         Rabotnik rab1 = new Rabotnik("Alexander", 1070);
         Rabotnik rab2 = new Rabotnik("Viktor", 640);
         Chelovek[] chelovek = {uStd1, uStd2, rStd1, rStd2, rab1, rab2};
-
+try{
         System.out.println("Выводим всех на экран");
         for (Chelovek a : chelovek) {
             System.out.println(a);
@@ -63,6 +63,11 @@ public class Demo {
                 System.out.println(a);
             }
         }
+}catch(ArrayIndexOutOfBoundsException e){
+    System.out.println("Ошибка индекса массива "+e);
+}catch(ArithmeticException e){
+    System.out.println("Арифметическая ошибка "+e);
+}
         
 
     }

@@ -10,40 +10,27 @@ package People_Palk;
  *
  * @author Mark
  */
-//public class RabStudent extends UspehStudent implements ZarPlata{
-//    protected int inCome = 300;
-//
-//    public RabStudent(String name, int stipendia) {
-//        super(name, stipendia);
-//    }
-//    
-//    public int raschet_zarplat(){
-//        int zarplat=0;
-//        return zarplat;
-//    }
-//    
-//    public String uroven_dohodnosi(){
-//        return "DOHOD "+stipendia;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "RabStudent{"+super.toString() + "inCome=" + inCome + '}';
-//    }
-//}
 public class RabotajushijStudent extends UspeshnijStudent implements ZarobotnajaPlata {
     
     protected int zarobotanajaPlata;
 
     public RabotajushijStudent(String name, int zarobotanajaPlata, int stipendija) {
         super(name, stipendija);
+        try{
         this.zarobotanajaPlata = zarobotanajaPlata;
+        }catch(AbstractMethodError e){
+            System.out.println("Ошибка в обстрактном методе "+e);
+        }catch(Error e){
+            System.out.println("Error "+e);
+        }
     }   
 
+    @Override
     public int raschitatZarobotanujuPlatu() {        
         return zarobotanajaPlata -= (zarobotanajaPlata * TEKUSHAJA_STAVKA_NALOGA) / 100;
     }
 
+    @Override
     public String urovenDohodnosti() {
         int dohod = stipendija+raschitatZarobotanujuPlatu() - MINIMALNIJ_DOHOD;
         if (dohod < MINIMALNIJ_PEREVES) {

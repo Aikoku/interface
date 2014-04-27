@@ -10,13 +10,6 @@ package People_Palk;
  *
  * @author Mark
  */
-//public interface ZarPlata {
-//    final int STAVKA_NALOGA = 21;
-////    String "zarp = "+raschet_zarplat();
-//    int palk = 
-//    
-//}
-
 interface ZarobotnajaPlata {
     final int TEKUSHAJA_STAVKA_NALOGA = 21;
     int raschitatZarobotanujuPlatu();
