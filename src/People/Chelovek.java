@@ -60,8 +60,9 @@ class Student extends Chelovek {
     public Student(String name) {
         super(name);
     }
-
 }
+
+
 
 class UspeshnijStudent extends Student implements Dohodnost {
     protected int stipendija;
@@ -87,6 +88,8 @@ class UspeshnijStudent extends Student implements Dohodnost {
         return urovenDohodnosti()+" Uspeshnij Student{" +super.toString()+ " stipedija= " + stipendija + '}';
     } 
 }
+
+
 
 class RabotajushijStudent extends UspeshnijStudent implements ZarobotnajaPlata {
     

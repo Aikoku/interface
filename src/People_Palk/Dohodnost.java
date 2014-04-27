@@ -10,10 +10,10 @@ package People_Palk;
  *
  * @author Mark
  */
-public interface Dohod {
-    final int MID_DOHOD=200;
-    final int HI_PEREVES =  300;
-    final int MIN_PEREVES = 400;
-    
-    
+interface Dohodnost {
+    final int MINIMALNIJ_DOHOD =200;
+    final int VISOKIJ_PEREVES = 500;
+    final int MINIMALNIJ_PEREVES = 400;
+    String urovenDohodnosti();
 }
+

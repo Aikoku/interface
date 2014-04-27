@@ -10,7 +10,7 @@ package People_Palk;
  *
  * @author Mark
  */
-public class Student extends People{
+public class Student extends Chelovek{
 
     public Student(String name) {
         super(name);
