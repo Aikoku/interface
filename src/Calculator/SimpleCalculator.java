@@ -35,7 +35,7 @@ public class SimpleCalculator {
         //dobavljaem komponenty na panel
         windowContent.add(label1);
         windowContent.add(field1);
-         windowContent.add(label2);
+        windowContent.add(label2);
         windowContent.add(field2);
         windowContent.add(label3);
         windowContent.add(result);
