@@ -8,23 +8,23 @@ public class madmax {
             array[i] = (int) randomInt(min, max);
         }
         return array;
-    }   //РАНДОМИЗАТОР МАССИВА
+    }   //Randomizator Marka
 
     public static int randomInt(int min, int max) {
         int k = max - min;
         int random = (int) (min + Math.random() * (k + 1));
         return random;
-    }   //РАНДОМИЗАТОР ЭЛЕМЕНТОВ МАССИВА
+    }   // Randomizator Marka
 
-    public static void sort_shell(int[] array) {
+    public static void shellivse(int[] array) {
         int i, j, k, h, m = 0, b = array.length;
         
-        int[] d = {1, 2147483647};
-        while (d[m] < b) {
+        int[] arr = {1, 2147483647};
+        while (arr[m] < b) {
             ++m;
         }
         while (--m >= 0) {
-            k = d[m];
+            k = arr[m];
             for (i = k; i < b; i++) {
                 j = i;
                 h = array[i];
@@ -37,7 +37,7 @@ public class madmax {
         }
     }
 
-    public static void selectionSort(int[] numbers) {
+    public static void prjamvybor(int[] numbers) {
         int min, temp;
 
         for (int index = 0; index < numbers.length - 1; index++) {
@@ -57,10 +57,9 @@ public class madmax {
     public static void main(String[] args) {
 
         int madmax[] = fillRandomInt(500, 10, 100);
-
         long start;
         start = System.nanoTime();
-        selectionSort(madmax);
+        prjamvybor(madmax);
         System.out.println("Time = " + (System.nanoTime() - start));
         for (int i = 0; i < madmax.length; i++) {
             System.out.print(madmax[i] + " ");
@@ -69,7 +68,7 @@ public class madmax {
 
         int antimadmax[] = fillRandomInt(500, 10, 100);
         start = System.nanoTime();
-        sort_shell(antimadmax);
+        shellivse(antimadmax);
         System.out.println("Time = " + (System.nanoTime() - start));
         for (int i = 0; i < antimadmax.length; i++) {
             System.out.print(antimadmax[i] + " ");
