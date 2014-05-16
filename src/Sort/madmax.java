@@ -18,7 +18,7 @@ public class madmax {
 
     public static void shellivse(int[] array) {
         int i, j, k, h, m = 0, b = array.length;
-        
+
         int[] arr = {1, 2147483647};
         while (arr[m] < b) {
             ++m;
