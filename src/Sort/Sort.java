@@ -30,24 +30,98 @@ public class Sort {
 
         start = System.nanoTime();
         cocktailSort(array1);
-        end = System.nanoTime();
-        System.out.println("Время Коктельной сортировки = " + (end - start));
+        System.out.println("Время Коктельной сортировки = " + (System.nanoTime() - start));
         show(array1);
 
         start = System.nanoTime();
         sort_shell(array2);
-        end = System.nanoTime();
-        System.out.println("Время сортировкой Шелла = " + (end - start));
+        System.out.println("Время сортировкой Шелла = " + (System.nanoTime() - start));
         show(array2);
 
+        
+        //Не для проверки!
         start = System.nanoTime();
         mergeSort(array3);
-        end = System.nanoTime();
-        System.out.println("Время сортировки Слиянием = " + (end - start));
+        System.out.println("Время сортировки Слиянием = " + (System.nanoTime() - start));
         show(array3);
 
     }
 
+    public static void cocktailSort(int[] array) {
+        boolean pass;
+        do {
+            pass = false;
+            for (int i = 0; i <= array.length - 2; i++) {
+                if (array[ i] > array[ i + 1]) {
+                    //test whether the two elements are in the wrong order
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    pass = true;
+                }
+            }
+            if (!pass) {
+                //we can exit the outer loop here if no swaps occurred.
+                break;
+            }
+            pass = false;
+            for (int i = array.length - 2; i >= 0; i--) {
+                if (array[ i] > array[ i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    pass = true;
+                }
+            }
+            //if no elements have been swapped, then the list is sorted
+        } while (pass);
+    }
+
+    public static void sort_shell(int[] array) {
+        int i, j, k, h, m = 0, b = array.length;
+//        int[] d = {1, 4, 10, 23, 57, 145, 356, 911, 1968, 4711, 11969, 27901,
+//            84801, 213331, 543749, 1355339, 3501671, 8810089, 21521774,
+//            58548857, 157840433, 410151271, 1131376761, 2147483647};
+        int[] d = {1,2147483647};
+        while (d[m] < b) {
+            ++m;//Через сколько элементов будет просмотр
+        }
+        while (--m >= 0) {
+            k = d[m];
+            for (i = k; i < b; i++) {     // k-сортировка
+                j = i;
+                h = array[i];
+                while ((j >= k) && (array[j - k] > h)) {
+                    array[j] = array[j - k];
+                    j = j - k;
+                }
+                array[j] = h;
+            }
+        }
+    }
+
+    public static int[] fillRandomInt(int length, int min, int max) {
+        int[] array = new int[length];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) randomInt(min, max);
+        }
+        return array;
+    }   //РАНДОМИЗАТОР МАССИВА
+
+    public static int randomInt(int min, int max) {
+        int k = max - min;
+        int random = (int) (min + Math.random() * (k + 1));
+        return random;
+    }   //РАНДОМИЗАТОР ЭЛЕМЕНТОВ МАССИВА
+
+    public static void show(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + "\t");
+        }
+        System.out.println("");
+    }   //МЕТОД ВЫВОДА МАССИВА
+
+    
     public static int[] mergeSort(int array[]) // pre: array is full, all elements are valid integers (not null)
     // post: array is sorted in ascending order (lowest to highest)
     {
@@ -126,77 +200,4 @@ public class Sort {
         // return the sorted array to the caller of the function
         return array;
     }
-
-    public static void cocktailSort(int[] array) {
-        boolean swapped;
-        do {
-            swapped = false;
-            for (int i = 0; i <= array.length - 2; i++) {
-                if (array[ i] > array[ i + 1]) {
-                    //test whether the two elements are in the wrong order
-                    int temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-                    swapped = true;
-                }
-            }
-            if (!swapped) {
-                //we can exit the outer loop here if no swaps occurred.
-                break;
-            }
-            swapped = false;
-            for (int i = array.length - 2; i >= 0; i--) {
-                if (array[ i] > array[ i + 1]) {
-                    int temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
-                    swapped = true;
-                }
-            }
-            //if no elements have been swapped, then the list is sorted
-        } while (swapped);
-    }
-
-    public static void sort_shell(int[] array) {
-        int i, j, k, h, m = 0, b = array.length;
-        int[] d = {1, 4, 10, 23, 57, 145, 356, 911, 1968, 4711, 11969, 27901,
-            84801, 213331, 543749, 1355339, 3501671, 8810089, 21521774,
-            58548857, 157840433, 410151271, 1131376761, 2147483647};
-        while (d[m] < b) {
-            ++m;
-        }
-        while (--m >= 0) {
-            k = d[m];
-            for (i = k; i < b; i++) {     // k-сортировка
-                j = i;
-                h = array[i];
-                while ((j >= k) && (array[j - k] > h)) {
-                    array[j] = array[j - k];
-                    j = j - k;
-                }
-                array[j] = h;
-            }
-        }
-    }
-
-    public static int[] fillRandomInt(int length, int min, int max) {
-        int[] array = new int[length];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) randomInt(min, max);
-        }
-        return array;
-    }   //РАНДОМИЗАТОР МАССИВА
-
-    public static int randomInt(int min, int max) {
-        int k = max - min;
-        int random = (int) (min + Math.random() * (k + 1));
-        return random;
-    }   //РАНДОМИЗАТОР ЭЛЕМЕНТОВ МАССИВА
-
-    public static void show(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + "\t");
-        }
-        System.out.println("");
-    }   //МЕТОД ВЫВОДА МАССИВА
 }
