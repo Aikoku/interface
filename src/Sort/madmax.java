@@ -77,3 +77,85 @@ public class madmax {
     }
 
 }
+
+вф
+        вф
+вф
+в
+фв
+ф
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package kr14_02_14;
+
+/**
+ *
+ * @author MarkNote
+ */
+public class kr14_02_14part2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        /* 10. Таблица футбольного чемпионата задана в виде двумерного массив из n строк и 
+         n столбцов, в котором все элементы, принадлежавшие главной диагонали, 
+         равны нулю, а каждый элемент, не принадлежащий главной диагонали, равен 3, 
+         1 или 0 (числу очков, набранных в игре: 3 — выигрыш, 1 — ничья. 0 — 
+         проигрыш). 
+         б) Определить номера команд/прошедших чемпионат без поражений.  */
+        int n = 3;
+        int[][] array = new int[n][n];
+        int[] randomArr = new int[]{0, 1, 3};
+        int random;
+        for (int i = 0; i < array.length; i++) {
+            //в этом цикле присваеваем двумерному массиву рандомные значения 0,1,3
+            for (int j = 0; j < array.length; j++) {
+                random = randomArr[(int) (Math.random() * 3)];
+                if (i == j) {
+                    array[i][j] = 0;
+                } else {
+                    array[i][j] = random;
+                }
+            }
+            boolean lose = false;
+            //проходим по строкам и ищем команды которые только выигрывали
+            for (int j = 0; j < array[i].length; j++) {
+                int x;
+                x = array[i][j];
+                if ((x == 0) & !(i == j)) {
+                    System.out.println("Команда с порядковым номером " + (i + 1) + " проигрывает.");
+                    lose = true;
+                    break;
+                }
+            }
+            //команда которая не проиграла ниразу
+            if (!lose) {
+                System.out.println("Команда с порядковым номером " + (i+1)+" не проиграла ниразу.");
+            }
+        }
+        show(array);
+    }
+
+    public static void show(int array[][]) {
+        for (int line = 0; line < array.length; line++) {
+            //Цикл по столбцам
+            for (int column = 0; column < array[line].length; column++) {
+                //нужные нам операции для array[line][column];
+                System.out.print("\t" + array[line][column]);
+            }
+            System.out.println("");
+        }
+    }
+
+}
+
+
+
+
