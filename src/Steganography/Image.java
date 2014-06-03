@@ -5,9 +5,9 @@
  */
 package Steganography;
 
-import com.mpatric.mp3agic.ID3v2;
-import com.mpatric.mp3agic.Mp3File;
-import java.io.RandomAccessFile;
+//import com.mpatric.mp3agic.ID3v2;
+//import com.mpatric.mp3agic.Mp3File;
+//import java.io.RandomAccessFile;
 import javax.swing.*;
 
 
@@ -39,9 +39,7 @@ public class Image extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        text1.setText("jTextField1");
-
-        btn1.setText("jButton1");
+        btn1.setText("вывести картинку");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn1ActionPerformed(evt);
@@ -59,8 +57,8 @@ public class Image extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(text1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(279, Short.MAX_VALUE))
+                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,7 +74,7 @@ public class Image extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-String imgName;
+    String imgName;
 
 //    public ImageIcon ImageIcon(String filename) {
 //        ImageIcon icon = new ImageIcon(filename);
@@ -97,7 +95,7 @@ String imgName;
 //    file.close();
 //  }
 //}
-        
+//        
         
         
    //     byte[] img.getId3v2Tag("C:/Users/Mark/Desktop/images/song.mp3").getAlbumImage();
@@ -110,7 +108,7 @@ String imgName;
         ImageIcon image = icon.ImageIcon(imgName);
         label1.setIcon(image);
     }//GEN-LAST:event_btn1ActionPerformed
-
+ 
     /**
      * @param args the command line arguments
      */

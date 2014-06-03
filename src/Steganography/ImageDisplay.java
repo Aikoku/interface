@@ -57,7 +57,7 @@ public class ImageDisplay extends JFrame {
 
         public void actionPerformed(ActionEvent e) {
             String text = name.getText().trim();
-            image = new ImageIcon(text).getImage();
+          //  image = new ImageIcon(text).getImage();
             repaint();
 
         }
@@ -66,7 +66,7 @@ public class ImageDisplay extends JFrame {
             setBackground(Color.WHITE);
             g.setColor(Color.WHITE);
             g.fillRect(10, 10, 800, 600);
-            g.drawImage(image, 10, 10, this);
+        //    g.drawImage(image, 10, 10, this);
         }
 
     }
